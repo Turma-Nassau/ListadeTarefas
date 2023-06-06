@@ -7,7 +7,7 @@ const PORT = 3001;
 
 app.use(bodyParser.json());
 
-// Rota para obter as anotações
+// obter as anotações
 app.get('/api/todos', (req, res) => {
   fs.readFile('db.json', 'utf8', (err, data) => {
     if (err) {
@@ -21,7 +21,6 @@ app.get('/api/todos', (req, res) => {
   });
 });
 
-// Rota para adicionar uma anotação
 app.post('/api/todos', (req, res) => {
   const { text, category } = req.body;
 
